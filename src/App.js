@@ -20,16 +20,19 @@ import './fonts/Regular.otf';
 import Contact from './pages/Contact';
 import Photography from './pages/Photography';
 import Developer from './pages/Developer';
+import Footer from './pages/Footer';
 
 
 
 function App() {
   return (
     <div>
+      <img src={require("./collections/_UNI1796.JPG")} className='background_img' />
       <Home />
       <Photography />
-      <Contact />
       <Developer />
+      <Contact />
+      <Footer />
     </div>
   );
 }

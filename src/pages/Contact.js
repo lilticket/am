@@ -15,7 +15,7 @@ export default function Contact() {
     }
     const url = require("../photos/backflip.jpg");
     return (
-        <div className='container'>
+        <div className='container' id='contact_container'>
             <Card url={url} />
             <div className='form_view' id="form">
                 <form method="post" onSubmit={Submit}>
