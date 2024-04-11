@@ -16,5 +16,14 @@ export default [
         Folder: "v",
         Photos: [],
         Id: 1,
+    },
+    {
+        Title: "Tarina's Birthday",
+        Prefix: "pt_tb-",
+        Extension: ".jpg",
+        Count: 52,
+        Folder: "pt_tb",
+        Photos: [],
+        Id: 2,
     }
 ]

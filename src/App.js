@@ -1,4 +1,5 @@
 import './styles/Main.css'
+import './styles/Component_Styles.css'
 
 
 import Home from './pages/Home';
@@ -26,13 +27,22 @@ import Footer from './pages/Footer';
 
 function App() {
   return (
-    <div>
-      <img src={require("./collections/_UNI1796.JPG")} className='background_img' />
-      <Home />
-      <Photography />
-      <Developer />
-      <Contact />
-      <Footer />
+    <div className='scroll'>
+      <section>
+        <Home />
+      </section>
+      <section>
+        <Photography />
+      </section>
+      <section>
+        <Developer />
+      </section>
+      <section>
+        <Contact />
+      </section>
+      <section>
+        <Footer />
+      </section>
     </div>
   );
 }

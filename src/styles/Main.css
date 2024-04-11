@@ -1,14 +1,38 @@
+.scroll {
+    max-height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    align-items: center;
+    justify-content: center;
+    display: flexbox;
+
+
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scroll section {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
 .container {
     height: 100vh;
     width: 100vw;
-    /* position: absolute; */
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     max-width: 100vw;
     overflow-x: hidden;
     z-index: 22;
-    background-color: white;
+
+
+    /* background-color: white; */
 }
 
 .card {
@@ -64,7 +88,7 @@
 
 .title_txt {
     margin: 0;
-    font-family: Regular;
+    font-family: MyLight;
     font-size: 6vh;
 }
 
@@ -81,7 +105,7 @@
 .subTitle_a {
     text-decoration: none;
     color: black;
-    font-family: Regular;
+    font-family: MyReg;
     font-size: 3vh;
 }
 
@@ -98,7 +122,7 @@
 
 
 input {
-    font-family: Regular;
+    font-family: MyReg;
     font-size: 2vh;
     padding: 10px;
     border-width: 0px;
@@ -142,7 +166,7 @@ form {
 }
 
 textarea {
-    font-family: Regular;
+    font-family: MyReg;
     font-size: 2vh;
     box-sizing: border-box;
     resize: vertical;
@@ -159,7 +183,7 @@ textarea {
 }
 
 .contact_title_txt {
-    font-family: DemiBold;
+    font-family: MyDemiBold;
     font-size: 3em;
     color: white;
 }
@@ -174,11 +198,14 @@ textarea {
 
 /* PHOTOGRAPHY */
 
+#photography {
+    scroll-behavior: smooth;
+}
 
 .p_container {
     width: 95vw;
     height: 80vh;
-    aspect-ratio: 1.75;
+    /* aspect-ratio: 1.75; */
     background-color: white;
     /* background-color: aliceblue;
     border-radius: 8px; */
@@ -196,22 +223,23 @@ textarea {
 .l_container {
     width: 100%;
     height: 33.3%;
-    align-items: center;
+    /* border-radius: 8px; */
+    /* align-items: center;
     justify-content: space-evenly;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; */
 }
 
 .collection_a {
     text-decoration: none;
     color: black;
-    font-family: DemiBold;
+    font-family: MyDemiBold;
     font-size: 18px;
 }
 
 .r_container {
-    width: 100%;
-    height: 66.6%;
+    width: 95%;
+    height: 66.6vh;
     overflow-x: scroll;
     overflow-y: hidden;
 }
@@ -226,12 +254,24 @@ ul {
     max-width: 100%;
     overflow-y: hidden;
     padding: 0;
+    border-radius: 8px;
+
+    overflow-y: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 li {
-    height: 30vh;
+    height: 40vh;
+    max-width: 80vw;
     flex-grow: 1;
     margin: 10px;
+
+    scroll-snap-align: center;
+    /* scroll-snap-stop: always; */
 }
 
 .collection_img {
@@ -245,13 +285,13 @@ li {
 }
 
 .select_collection {
-    font-family: Regular;
-    font-size: large;
+    font-family: MyReg;
+    font-size: 1vw;
     padding: 10px;
     border-width: 0px;
     width: 90%;
     margin-bottom: 5%;
-    background-color: transparent;
+    /* background-color: transparent; */
     align-items: center;
     border-radius: 2px;
     color: black;
@@ -381,7 +421,7 @@ li {
 /* DEVELOPER */
 
 .dev_container {
-    height: 95vw;
+    height: 95vh;
     width: 95vw;
     padding: 2vh;
     object-fit: cover;
@@ -395,14 +435,14 @@ li {
 }
 
 .dev_container p {
-    -webkit-box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, .55);
-    background-color: rgba(255, 255, 255, .55);
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, .85);
+    background-color: rgba(255, 255, 255, .85);
     padding: 1vh;
     max-width: 90%;
 }
 
 .dev_title {
-    font-family: DemiBold;
+    font-family: MyDemiBold;
     font-size: 4vh;
     text-align: center;
 }
@@ -414,7 +454,7 @@ li {
 }
 
 .dev_body {
-    font-family: Regular;
+    font-family: MyReg;
     font-size: 2vh;
     text-align: center;
 }
@@ -426,13 +466,13 @@ li {
     /* border-width: .25vh;
     border-style: solid;
     border-color: black; */
-    font-family: DemiBold;
+    font-family: MyDemiBold;
     font-size: 3vh;
     padding: 2vh;
-    -webkit-box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, .55);
-    background-color: rgba(255, 255, 255, .55);
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, .85);
+    background-color: rgba(255, 255, 255, .85);
 }
 
 b {
-    font-family: ExtraBold;
+    font-family: MyBold;
 }

@@ -1,40 +1,47 @@
 import React, { useEffect, useState } from 'react'
 import Card from './Card';
 import Collections from '../data/Collections';
+import Component_Select from './Component_Select';
 
 export default function Photography() {
 
-    const [collectons, setCollections] = useState(null);
+    const [collections, setCollections] = useState(null);
     const [selected, setSelected] = useState(null);
     const [modal, setModal] = useState(null);
+    const [titles, setTitles] = useState(null);
 
     useEffect(() => {
-        Collections.forEach(c => {
-            let i = 1;
-            while (i < c.Count) {
-                if (i.toString().length < 2) {
-                    i = "0" + i
+        if (collections == null) {
+            Collections.forEach(c => {
+                let i = 1;
+                while (i < c.Count) {
+                    if (i.toString().length < 2) {
+                        i = "0" + i
+                    }
+                    c.Photos.push(require(`../collections/${c.Folder}/${c.Prefix}${i}${c.Extension}`));
+                    i++;
                 }
-                c.Photos.push(require(`../collections/${c.Folder}/${c.Prefix}${i}${c.Extension}`));
-                i++;
-            }
-        });
-        setCollections(Collections)
+            });
+            setCollections(Collections)
+        }
+        if (collections !== null && titles == null) {
+            let titles = collections.map(c => c.Title);
+            setTitles(titles)
+        }
+        if (titles !== null && selected == null) {
+            setSelected(titles[0]);
+        }
     })
 
 
     const RenderSelect = () => {
-        if (Collections != null) {
-            let titles = Collections.map(c => c.Title);
+        if (collections !== null && selected !== null) {
             return (
-                <select className='select_collection' id='select_collection' value={selected} onChange={e => setSelected(e.target.value)}>
-                    <option></option>
-                    {titles.map(t => {
-                        return (
-                            <option key={t} value={t}>{t}</option>
-                        )
-                    })}
-                </select>
+                <Component_Select
+                    options={titles}
+                    selected={selected}
+                    setSelected={(s) => setSelected(s)}
+                />
             )
         }
         return (
@@ -45,7 +52,7 @@ export default function Photography() {
     const RenderCollection = () => {
         if (selected != null) {
             return (
-                collectons.find(c => c.Title == selected).Photos.map(sp => {
+                collections.find(c => c.Title == selected).Photos.map(sp => {
                     return (
                         <li key={sp}>
                             <a href='#photography' onClick={() => setModal(sp)}>
@@ -76,7 +83,6 @@ export default function Photography() {
         <div className='container' id="photography">
             <div className='p_container'>
                 <div className='l_container'>
-                    <p className='photography_title'>Some Pics!</p>
                     <RenderSelect />
                 </div>
                 <div className='r_container'>

@@ -5,7 +5,7 @@ export default function Home() {
 
     const url = require("../photos/RockCoast.jpg");
     return (
-        <div className='container'>
+        <div className='container' id="home">
             <Card url={url} />
             <div className='home_container'>
                 <div className='container_title'>

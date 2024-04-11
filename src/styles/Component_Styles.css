@@ -5,6 +5,7 @@
     max-width: 100vw;
     padding: 15px;
     margin: 0px;
+    border-radius: 8px;
 
     border-bottom-width: 1vw;
     border-color: white;
@@ -13,16 +14,18 @@
     border-top-width: .75vw;
     border-top-color: white;
     border-top-style: solid;
+
+    position: absolute;
 }
 
 .sc_selected_txt {
     /* background-color: rgba(0, 0, 0, 1); */
     color: white;
     font-size: 5vw;
-    font-family: Bold;
+    font-family: MyDemiBold;
     margin: 0;
     text-align: right;
-    height: 6vw;
+    /* height: 6vw; */
     padding: 0px;
 }
 

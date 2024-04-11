@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 code {
@@ -29,6 +32,10 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   background-color: white;
+
+
+  overflow-y: scroll;
+  scroll-snap-type: mandatory;
 }
 
 @font-face {
@@ -39,7 +46,7 @@ body {
 }
 
 @font-face {
-  font-family: "Bold";
+  font-family: "MyBold";
   /*Can be any text*/
   src: local("Bold"),
     url("./fonts/Bold.otf") format("opentype");
@@ -53,7 +60,7 @@ body {
 }
 
 @font-face {
-  font-family: "DemiBold";
+  font-family: "MyDemiBold";
   /*Can be any text*/
   src: local("DemiBold"),
     url("./fonts/DemiBold.otf") format("opentype");
@@ -88,7 +95,7 @@ body {
 }
 
 @font-face {
-  font-family: "Italic";
+  font-family: "MyItalic";
   /*Can be any text*/
   src: local("Italic"),
     url("./fonts/Italic.otf") format("opentype");
@@ -102,7 +109,7 @@ body {
 }
 
 @font-face {
-  font-family: "Light";
+  font-family: "MyLight";
   /*Can be any text*/
   src: local("Light"),
     url("./fonts/Light.otf") format("opentype");
@@ -123,7 +130,10 @@ body {
 }
 
 @font-face {
-  font-family: "Regular";
+  font-family: "MyReg";
+  font-style: normal;
+  font-weight: normal;
+
   /*Can be any text*/
   src: local("Regular"),
     url("./fonts/Regular.otf") format("opentype");
